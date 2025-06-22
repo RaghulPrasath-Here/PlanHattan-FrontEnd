@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import profilePic from '../Assets/profilePic.jpg'
+import profilePic from '../../assests/profilePic.jpg'
 
 const navItems = [
-    { name: 'Discover', path: '/plan' },       // change from '/plan/discover' to '/plan'
+    { name: 'Discover', path: '/plan' },     
   { name: 'My Plans', path: '/my-plans' },
   { name: 'Friends', path: '/friends' },
 ];

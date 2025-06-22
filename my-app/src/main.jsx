@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { MapProvider } from './Contexts/MapContexts';
+import { MapProvider } from './contexts/MapContext.jsx';
 import App from './App.jsx';
 import './index.css';
 

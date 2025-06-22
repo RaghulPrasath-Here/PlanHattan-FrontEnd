@@ -1,0 +1,193 @@
+/* MyPlans.css */
+.my-plans-container {
+  height: 100%;
+}
+
+.my-plans-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.my-plans-header h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.results-count {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.plans-scroll-container {
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.plans-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+}
+
+.plans-table th {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  color: #718096;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.plans-table td {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.plans-table tr td:first-child {
+  border-left: 1px solid #edf2f7;
+  border-radius: 8px 0 0 8px;
+}
+
+.plans-table tr td:last-child {
+  border-right: 1px solid #edf2f7;
+  border-radius: 0 8px 8px 0;
+}
+
+.place-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.area-badge {
+  background: #e9d8fd;
+  color: #553c9a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.prediction-bar {
+  position: relative;
+  padding-left: 2rem;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 4px 0 4px 2rem; /* Added vertical padding */
+  border-radius: 4px;
+}
+
+.prediction-bar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--percentage) * 1%);
+  max-width: 100px;
+  height: 100%;
+  background: var(--bar-color);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+  padding: 0.5rem;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  color: #ff7875;
+}
+
+/* Scrollbar styling */
+.plans-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.plans-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.plans-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.plans-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Color variables for prediction bars */
+:root {
+  --high-prediction: #ff4d4f; /* Red for ≥80% */
+  --medium-prediction: #faad14; /* Orange/Yellow for 40-79% */
+  --low-prediction: #52c41a; /* Green for <40% */
+}
+
+/* Replace the .area-badge styles with these: */
+.area-image-container {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.area-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Increased gap for images */
+}
+
+/* Add these at the bottom of your existing CSS */
+.plan-row {
+  transition: all 0.3s ease-out;
+  transform-origin: top;
+}
+
+.plan-row.deleting {
+  transform: scaleY(0);
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* Ensure table rows don't collapse during animation */
+.plans-table {
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+}
+
+/* Fix for border-radius during animation */
+.plans-table tr td:first-child,
+.plans-table tr.deleting td:first-child {
+  border-left: 1px solid #edf2f7;
+  border-radius: 8px 0 0 8px;
+}
+
+.plans-table tr td:last-child,
+.plans-table tr.deleting td:last-child {
+  border-right: 1px solid #edf2f7;
+  border-radius: 0 8px 8px 0;
+}
