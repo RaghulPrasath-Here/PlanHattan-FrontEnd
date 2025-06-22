@@ -1,0 +1,258 @@
+/* src/styles/FriendsDashboard.css */
+
+
+/* Container Layout */
+
+.friends-dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.friends-dashboard-container h1 {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Card component */
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card h2 {
+    margin: 0 0 0.5rem 0;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+
+/* Plans Shared */
+
+.shared-plan {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.shared-plan:last-child {
+    border-bottom: none;
+}
+
+.shared-plan:hover {
+    background-color: #f0f6fb;
+    border-radius: 8px;
+}
+
+.shared-plan .icon {
+    font-size: 1.7rem;
+    margin-top: 4px;
+}
+
+.details {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.status {
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: white;
+    display: inline-block;
+}
+
+.status.accepted {
+    background-color: #2ecc71;
+}
+
+.status.pending {
+    background-color: #e67e22;
+}
+
+
+/* Buttons */
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
+}
+
+.btn-remind {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-start;
+}
+
+.btn-remind:hover {
+    background-color: #0056b3;
+}
+
+.reminder-note {
+    color: #00b894;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    align-self: center;
+}
+
+
+/* Search and Add Friends */
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.button-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-add {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #3e8e41;
+}
+
+.btn-invite {
+    background-color: #c0392b;
+    color: white;
+}
+
+.btn-invite:hover {
+    background-color: #922b21;
+}
+
+.btn-show-friends {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-show-friends:hover {
+    background-color: #2874a6;
+}
+
+.friends-list {
+    margin-top: 1rem;
+    list-style: none;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    color: #333;
+    max-height: 160px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+}
+
+.added-count {
+    margin-top: 0.75rem;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+
+/* Activity Feed */
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item .avatar {
+    font-size: 1.6rem;
+    user-select: none;
+}
+
+.activity-item p {
+    flex: 1;
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555;
+}
+
+.btn-action {
+    background-color: #c0392b;
+    color: white;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-action:hover {
+    background-color: #922b21;
+}
+
+.activity-feed {
+    grid-column: 1 / -1;
+    font-size: 1.1rem;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.activity-feed h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #222;
+}

@@ -1,0 +1,139 @@
+/* PlanPreview.css */
+
+
+/* Overall container */
+
+.plan-preview {
+    padding: 2rem;
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 700px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    background: white;
+    box-sizing: border-box;
+}
+
+
+/* Titles */
+
+.plan-preview h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.plan-preview h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    text-align: center;
+}
+
+
+/* Dates */
+
+.date {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+
+/* Stops in plan */
+
+.stop-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.stop-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stop-info span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+
+/* Badge for crowd level */
+
+.crowd-badge {
+    padding: 0.4rem 0.75rem;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+
+/* Buttons */
+
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1 1 120px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.btn.join {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn.suggest {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn.comment {
+    background-color: #e0e0e0;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .plan-preview {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    .plan-preview h1 {
+        font-size: 1.6rem;
+    }
+    .plan-preview h2 {
+        font-size: 1.3rem;
+    }
+    .preview-actions {
+        gap: 0.75rem;
+    }
+    .btn {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

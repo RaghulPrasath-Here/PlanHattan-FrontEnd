@@ -1,0 +1,190 @@
+/* FriendsPage.css */
+
+
+/* Overall container */
+
+.friends-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Header */
+
+.friends-page-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+
+/* Share Plan Form */
+
+.share-form {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.share-form input,
+.share-form select {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.share-form button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.share-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Friend List */
+
+.friend-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+/* Friend Card */
+
+.friend-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 340px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    overflow: visible;
+    position: relative;
+}
+
+.friend-card:hover {
+    transform: translateY(-4px);
+}
+
+.friend-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.activity {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+
+/* Plan List */
+
+.plan-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.plan {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.plan {
+    transition: all 0.3s ease;
+}
+
+.plan.accepted {
+    border-left: 5px solid #2ecc71;
+}
+
+.plan.pending {
+    border-left: 5px solid #e67e22;
+}
+
+.plan input,
+.plan select {
+    margin-right: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+
+/* Buttons */
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    filter: brightness(0.95);
+}
+
+.btn.remind {
+    background-color: #e0e0e0;
+}
+
+.btn.invite {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn.edit-btn {
+    background-color: #007bff;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+
+/* Reminder Message */
+
+.reminder-message {
+    font-size: 0.8rem;
+    color: #00b894;
+    margin-top: 0.5rem;
+}
