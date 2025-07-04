@@ -9,7 +9,8 @@ export default function App() {
 
   // 触发后端 OAuth2 流程
   const handleLogin = () => {
-    window.location.href = 'http://localhost:8000/api/oauth2/authorization/google';
+    window.location.href = 'https://planhattan.ddns.net/api/oauth2/authorization/google';
+    // window.location.href = 'http://localhost:8000/api/oauth2/authorization/google';
   };
 
   // 初始化时检查登录状态
@@ -20,30 +21,39 @@ export default function App() {
 
       {error && <div className="error">{error}</div>}
 
-      {user ? (
-        <div className="profile">
-          <img src={user.picture} alt="avatar" />
-          <h2>Welcome, {user.name}</h2>
-          <p>Email: {user.email}</p>
-          <button onClick={() => {
-            window.location.href = 'http://localhost:8000/logout'; // 触发后端退出
-            setUser(null);
-          }}>Logout</button>
-        </div>
-      ) : (
-        <button onClick={handleLogin} disabled={loading}>
-          {loading ? 'Loading...' : 'Login with Google'}
-        </button>
-      )}
+      <button onClick={handleLogin} disabled={loading}>
+        {loading ? 'Loading...' : 'Login with Google'}
+      </button>
+
       <button onClick={() => {
-        axios.get('http://localhost:8000/api/csrf-token').then(response => {
+        axios.get('https://planhattan.ddns.net/api/csrf-token').then(response => {
           console.log(response.data);
         }).catch(error => {
           console.error(error);
         });
       }} disabled={loading}>
-        {loading ? 'Loading...' : 'Login with Google'}
+        {loading ? 'Loading...' : 'Get CSRF Token'}
       </button>
+
+      <button onClick={() => {
+        const params = new URLSearchParams();
+        params.append('username', 'zeli');
+        params.append('password', '123');
+        axios.post('https://planhattan.ddns.net/api/login', params,
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          }
+        ).then(response => {
+          console.log(response.data);
+        }).catch(error => {
+          console.error(error);
+        });
+      }} disabled={loading}>
+        {loading ? 'Loading...' : 'Normal Login'}
+      </button>
+
     </div>
   );
 }
